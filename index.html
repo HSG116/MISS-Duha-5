@@ -1,0 +1,1059 @@
+<div class='moon'>
+  <div class='crater1'></div>
+  <div class='crater2'></div>
+  <div class='crater3'></div>
+</div>
+<canvas id="canvas"></canvas>
+<div id="sea"></div>
+
+<div id="merrywrap" class="merrywrap">
+  <div class="giftbox">
+    <div class="cover">
+      <div></div>
+    </div>
+    <div class="box"></div>
+  </div>
+  <div class="icons">
+    <div class="row"> 
+      <span>T</span>
+      <span>H</span>
+      <span>A</span>
+      <span>N</span>
+      <span>K</span>
+      <span>S</span>
+    </div>
+    <div class="row"> 
+      <span>M</span>
+      <span>I</span>
+      <span>S</span>
+      <span>S</span>
+    </div>
+    <div class="row"> 
+      <span>D</span>
+      <span>U</span>
+      <span>H</span>
+      <span>A</span>
+    </div>
+    <div class="row full-arabic">
+      <span>"شكرًا لأنكِ كنتِ النور وسط الظروف الصعبة… علمتنا من قلبك قبل كتابك 🤍"</span>
+    </div>
+    <div class="row full-arabic">
+      <span>"كل الشكر لكِ مس ضحى، رح نشتاق لدروسك وكلامك الطيب جدًا 🥺❤️"</span>
+    </div>
+  </div>
+</div>
+
+<!-- المشهد الثاني - الاختراق -->
+<div class="hack-overlay" id="hackOverlay">
+  <div class="hack-window">
+    <div class="hack-header">⚠️ SYSTEM BREACH DETECTED ⚠️</div>
+    <div class="hack-code" id="hackingCode"></div>
+  </div>
+</div>
+
+<!-- نافذة الرسالة الصوتية -->
+<div class="voice-overlay" id="voiceOverlay">
+  <div class="voice-window">
+    <div class="voice-message" id="voiceText"></div>
+  </div>
+</div>
+
+<!-- المشهد الثالث - العودة الملكية -->
+<div class="scene3" id="scene3">
+  <div class="container">
+    <div class="crown">👑</div>
+    <h1 class="royal-title">مش بس نحب... بنفكر، بنكتشف، وبنصلّح!</h1>
+    
+    <div class="royal-message">
+      شكراً مس ضحى... لأنك وثقتي بعقول البنات 💙
+    </div>
+    
+    <div class="royal-message">
+      إذا بدكم تصلحوا الأخطاء… لازمكم إذن من ملكات الرياضيات!
+    </div>
+    
+    <div class="final-section">
+      <h3>اختبار معرفة مدى حب الطلاب لمس ضحى 🙈</h3>
+      
+      <div class="buttons-container">
+        <a href="https://forms.office.com/r/QXdh9KegKg" target="_blank" class="royal-btn">
+          ✨ ادخلوا الاختبار هون ✨
+        </a>
+        
+        <a href="https://wordwall.net/resource/94354053" target="_blank" class="royal-btn game-btn">
+          🎮 العبة 🎮
+        </a>
+      </div>
+      
+      <div class="qr-code">
+        <p>أو امسحوا الكود:</p>
+        <img src="https://i.postimg.cc/y6D5jQgG/IMG.jpg" alt="QR Code">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Font imports */
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Kaushan Script', cursive;
+}
+
+body {
+  background: #e74;
+  background-image: 
+    radial-gradient(circle at center bottom, #e9b64b ,#c76075 15%, #0d0d4b 75%, #190e14 90%);
+}
+
+/* Canvas and background elements */
+canvas#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#sea {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: radial-gradient(circle at center top, #23485a, #0d0246);
+  z-index: 2;
+}
+
+/* Moon styling */
+.moon {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ddd;
+  box-shadow: inset 16px -8px 0 0 #b9b9b9;
+  z-index: 2;
+}
+
+.moon .crater1, 
+.moon .crater2, 
+.moon .crater3 {
+  position: absolute;
+  border-radius: 50%;
+  background: #bbb;
+}
+
+.moon .crater1 {
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  right: 16px;
+  box-shadow: inset -2.4px 1.2px 0 0 #aaa;
+}
+
+.moon .crater2 {
+  width: 8px;
+  height: 8px;
+  top: 36px;
+  right: 40px;
+  box-shadow: inset -0.8px 0.4px 0 0 #aaa;
+}
+
+.moon .crater3 {
+  width: 12px;
+  height: 12px;
+  top: 48px;
+  right: 20px;
+  box-shadow: inset -1.2px 0.6px 0 0 #aaa;
+}
+
+/* Gift box styling */
+.merrywrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.giftbox {
+  position: fixed;
+  width: 240px;
+  height: 160px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 11;
+}
+
+.giftbox > div {
+  background: #34495e;
+  position: absolute;
+}
+
+.giftbox > div:after, 
+.giftbox > div:before {
+  position: absolute;
+  content: "";
+  top: 0;
+}
+
+.giftbox:after {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  content: "Click Me!";
+  left: 0;
+  bottom: -30px;
+  font-size: 20px;
+  text-align: center;
+  transform: rotate(-20deg);
+  transform-origin: 0 0;
+}
+
+.giftbox .cover {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 25%;
+  z-index: 2;
+}
+
+.giftbox .cover:before {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 40px;
+  transform: translateX(-50%);
+  background: #fdc56d;
+}
+
+.giftbox .cover > div {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+}
+
+.giftbox .cover > div:before, 
+.giftbox .cover > div:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: inset 0 0 0 12px #fdc56d;
+  border-radius: 24px;
+  transform-origin: 50% 100%;
+}
+
+.giftbox .cover > div:before {
+  transform: translateX(-45%) skewY(40deg);
+}
+
+.giftbox .cover > div:after {
+  transform: translateX(45%) skewY(-40deg);
+}
+
+.giftbox .box {
+  right: 5%;
+  left: 5%;
+  height: 80%;
+  bottom: 0;
+}
+
+.giftbox .box:before {
+  width: 40px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fdc56d;
+}
+
+.giftbox .box:after {
+  width: 100%;
+  height: 24px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Text styling */
+.icons {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  z-index: 5;
+}
+
+.icons .row {
+  margin: 10px 0;
+}
+
+.icons .row span {
+  color: #e5e5e5;
+  text-shadow: 3px 3px 0 rgba(96, 125, 139, 0.4);
+  font-size: 2.5rem;
+  display: inline-block;
+  opacity: 0;
+  margin: 0 2px;
+  transition: transform 0.5s ease-in, opacity 0.7s;
+}
+
+.icons .full-arabic span {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.4rem;
+  display: block;
+  margin: 15px auto;
+  line-height: 1.6;
+  white-space: normal;
+  max-width: 90%;
+}
+
+/* المشهد الثالث - العودة الملكية */
+.scene3 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  z-index: 20;
+}
+
+.scene3 .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.crown {
+  font-size: 5rem;
+  margin-bottom: 30px;
+  animation: rotate 3s linear infinite;
+}
+
+.royal-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+  font-family: 'Amiri', serif;
+}
+
+.royal-message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-family: 'Amiri', serif;
+}
+
+.final-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.royal-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+  font-family: 'Amiri', serif;
+}
+
+.game-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ffa3a3);
+}
+
+.royal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.6);
+}
+
+.qr-code {
+  margin-top: 30px;
+}
+
+.qr-code img {
+  max-width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* نافذة الاختراق */
+.hack-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+}
+
+.hack-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 500px;
+  background: #000;
+  border: 2px solid #00ff41;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 30px #00ff41;
+  animation: hackGlitch 0.2s ease-in-out infinite;
+}
+
+.hack-header {
+  color: #ff0000;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  animation: blink 0.5s infinite;
+}
+
+.hack-code {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  margin: 10px 0;
+}
+
+.hack-line {
+  margin: 3px 0;
+}
+
+.system { color: #00ff41; }
+.error { color: #ff5555; }
+.warning { color: #ffaa00; }
+.success { color: #55ff55; }
+
+/* نافذة الرسالة الصوتية */
+.voice-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1001;
+  color: white;
+  font-family: 'Amiri', serif;
+}
+
+.voice-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background: linear-gradient(135deg, #003366, #0066cc);
+  border: 3px solid #4facfe;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 50px #4facfe;
+}
+
+.voice-message {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+.voice-highlight {
+  color: #ffff00;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ffff00;
+}
+
+/* Animations */
+@keyframes wobble {
+  25% { transform: rotate(4deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes flyUp {
+  75% { opacity: 1; }
+  100% { transform: translateY(-1000px) rotate(20deg); opacity: 0; }
+}
+
+@keyframes flyDown {
+  75% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(30,132,242,0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 38px rgba(30,132,242,0.88),
+    0 0 60px rgba(30,132,242,1);
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hackGlitch {
+  0%, 100% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-50%, -50%) skew(0.5deg); }
+  50% { transform: translate(-50%, -50%) skew(-0.5deg); }
+  75% { transform: translate(-50%, -50%) skew(0.2deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Step animations */
+.step-1 .giftbox {
+  animation: wobble 0.5s linear infinite forwards;
+}
+
+.step-1 .cover {
+  animation: wobble 0.5s linear infinite 0.1s forwards;
+}
+
+.step-1 .icons .row span {
+  opacity: 0;
+}
+
+.step-1 .icons .row span:first-child { transform: translateY(700%) translateX(600%); }
+.step-1 .icons .row span:nth-child(2) { transform: translateY(700%) translateX(500%); }
+.step-1 .icons .row span:nth-child(3) { transform: translateY(700%) translateX(400%); }
+.step-1 .icons .row span:nth-child(4) { transform: translateY(700%) translateX(300%); }
+.step-1 .icons .row span:nth-child(5) { transform: translateY(700%) translateX(200%); }
+.step-1 .icons .row span:nth-child(6) { transform: translateY(700%) translateX(100%); }
+.step-1 .icons .row span:nth-child(7) { transform: translateY(700%) translateX(0); }
+.step-1 .icons .row span:nth-child(8) { transform: translateY(700%) translateX(-100%); }
+
+.step-2 .giftbox:after {
+  opacity: 0;
+}
+
+.step-3 .giftbox,
+.step-4 .giftbox {
+  opacity: 0;
+  z-index: 1;
+}
+
+.step-3 .giftbox:after,
+.step-4 .giftbox:after {
+  opacity: 0;
+}
+
+.step-2 .giftbox .cover {
+  animation: flyUp 0.4s ease-in forwards;
+}
+
+.step-2 .giftbox .box {
+  animation: flyDown 0.2s ease-in 0.05s forwards;
+}
+
+.step-2 .icons .row span,
+.step-3 .icons .row span,
+.step-4 .icons .row span {
+  opacity: 1; 
+  transition-timing-function: cubic-bezier(0.000, 0.000, 0.200, 0.910);
+}
+
+.step-4 .icons .row span,
+.step-3 .icons .row span { 
+  color: #c6e2ff;
+  animation: neon 0.08s ease-in-out infinite alternate;
+}
+
+.step-4 .icons .row.full-arabic span {
+  animation: none;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.step-4 .icons .row span:nth-child(even),
+.step-3 .icons .row span:nth-child(even) { 
+  animation-duration: 0.7s;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .moon {
+    width: 100px;
+    height: 100px;
+    right: 15%;
+    top: 15%;
+  }
+  
+  .moon .crater1 {
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .moon .crater2 {
+    width: 10px;
+    height: 10px;
+    top: 45px;
+    right: 50px;
+  }
+  
+  .moon .crater3 {
+    width: 15px;
+    height: 15px;
+    top: 60px;
+    right: 25px;
+  }
+  
+  .giftbox {
+    width: 300px;
+    height: 200px;
+    bottom: 40px;
+  }
+  
+  .giftbox:after {
+    font-size: 24px;
+    bottom: -35px;
+  }
+  
+  .icons .row span {
+    font-size: 3.5rem;
+    margin: 0 5px;
+  }
+  
+  .icons .full-arabic span {
+    font-size: 1.8rem;
+    max-width: 80%;
+  }
+  
+  #sea {
+    height: 50px;
+  }
+  
+  .royal-title {
+    font-size: 3rem;
+  }
+  
+  .royal-message {
+    font-size: 1.8rem;
+  }
+  
+  .royal-btn {
+    font-size: 1.5rem;
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .icons .row span {
+    font-size: 4rem;
+  }
+  
+  .icons .full-arabic span {
+    font-size: 2rem;
+  }
+}
+</style>
+
+<script>
+// Animation frame polyfill
+window.requestAnimFrame = (function() {
+  return window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+      };
+})();
+
+// Setup canvas and variables
+var canvas = document.getElementById('canvas'),
+    ctx = canvas.getContext('2d'),
+    cw = window.innerWidth,
+    ch = window.innerHeight,
+    fireworks = [],
+    particles = [],
+    hue = 120,
+    limiterTotal = 5,
+    limiterTick = 0,
+    timerTotal = 80,
+    timerTick = 0,
+    mousedown = false,
+    mx, my;
+
+// Set canvas dimensions
+canvas.width = cw;
+canvas.height = ch;
+
+// Helper functions
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function calculateDistance(p1x, p1y, p2x, p2y) {
+  var xDistance = p1x - p2x,
+      yDistance = p1y - p2y;
+  return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+}
+
+// Firework class
+function Firework(sx, sy, tx, ty) {
+  this.x = sx;
+  this.y = sy;
+  this.sx = sx;
+  this.sy = sy;
+  this.tx = tx;
+  this.ty = ty;
+  this.distanceToTarget = calculateDistance(sx, sy, tx, ty);
+  this.distanceTraveled = 0;
+  this.coordinates = [];
+  this.coordinateCount = 3;
+  
+  while(this.coordinateCount--) {
+    this.coordinates.push([this.x, this.y]);
+  }
+  
+  this.angle = Math.atan2(ty - sy, tx - sx);
+  this.speed = 2;
+  this.acceleration = 1.05;
+  this.brightness = random(50, 70);
+  this.targetRadius = 1;
+}
+
+Firework.prototype.update = function(index) {
+  this.coordinates.pop();
+  this.coordinates.unshift([this.x, this.y]);
+  
+  if(this.targetRadius < 8) {
+    this.targetRadius += 0.3;
+  } else {
+    this.targetRadius = 1;
+  }
+  
+  this.speed *= this.acceleration;
+  
+  var vx = Math.cos(this.angle) * this.speed,
+      vy = Math.sin(this.angle) * this.speed;
+  
+  this.distanceTraveled = calculateDistance(this.sx, this.sy, this.x + vx, this.y + vy);
+  
+  if(this.distanceTraveled >= this.distanceToTarget) {
+    createParticles(this.tx, this.ty);
+    fireworks.splice(index, 1);
+  } else {
+    this.x += vx;
+    this.y += vy;
+  }
+};
+
+Firework.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+  ctx.lineTo(this.x, this.y);
+  ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
+  ctx.stroke();
+  
+  ctx.beginPath();
+  ctx.arc(this.tx, this.ty, this.targetRadius, 0, Math.PI * 2);
+  ctx.stroke();
+};
+
+// Particle class
+function Particle(x, y) {
+  this.x = x;
+  this.y = y;
+  this.coordinates = [];
+  this.coordinateCount = 5;
+  
+  while(this.coordinateCount--) {
+    this.coordinates.push([this.x, this.y]);
+  }
+  
+  this.angle = random(0, Math.PI * 2);
+  this.speed = random(1, 10);
+  this.friction = 0.95;
+  this.gravity = 1;
+  this.hue = random(hue - 20, hue + 20);
+  this.brightness = random(50, 80);
+  this.alpha = 1;
+  this.decay = random(0.015, 0.03);
+}
+
+Particle.prototype.update = function(index) {
+  this.coordinates.pop();
+  this.coordinates.unshift([this.x, this.y]);
+  this.speed *= this.friction;
+  this.x += Math.cos(this.angle) * this.speed;
+  this.y += Math.sin(this.angle) * this.speed + this.gravity;
+  this.alpha -= this.decay;
+  
+  if(this.alpha <= this.decay) {
+    particles.splice(index, 1);
+  }
+};
+
+Particle.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+  ctx.lineTo(this.x, this.y);
+  ctx.strokeStyle = 'hsla(' + this.hue + ', 100%, ' + this.brightness + '%, ' + this.alpha + ')';
+  ctx.stroke();
+};
+
+// Create particles explosion
+function createParticles(x, y) {
+  var particleCount = 30;
+  while(particleCount--) {
+    particles.push(new Particle(x, y));
+  }
+}
+
+// Main animation loop
+function loop() {
+  requestAnimFrame(loop);
+  
+  hue += 0.5;
+  
+  ctx.globalCompositeOperation = 'destination-out';
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+  ctx.fillRect(0, 0, cw, ch);
+  ctx.globalCompositeOperation = 'lighter';
+  
+  var i = fireworks.length;
+  while(i--) {
+    fireworks[i].draw();
+    fireworks[i].update(i);
+  }
+  
+  var i = particles.length;
+  while(i--) {
+    particles[i].draw();
+    particles[i].update(i);
+  }
+  
+  if(timerTick >= timerTotal) {
+    if(!mousedown) {
+      fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+      timerTick = 0;
+    }
+  } else {
+    timerTick++;
+  }
+  
+  if(limiterTick >= limiterTotal) {
+    if(mousedown) {
+      fireworks.push(new Firework(cw / 2, ch, mx, my));
+      limiterTick = 0;
+    }
+  } else {
+    limiterTick++;
+  }
+}
+
+// Gift box animation
+window.onload = function() {
+  var merrywrap = document.getElementById("merrywrap");
+  var box = merrywrap.getElementsByClassName("giftbox")[0];
+  var step = 1;
+  var stepMinutes = [2000, 2000, 1000, 1000];
+  
+  function init() {
+    box.addEventListener("click", openBox, false);
+  }
+  
+  function stepClass(step) {
+    merrywrap.className = 'merrywrap step-' + step;
+  }
+  
+  function openBox() {
+    if(step === 1) {
+      box.removeEventListener("click", openBox, false); 
+    }  
+    stepClass(step); 
+    if(step === 4) {
+      reveal();
+      return;
+    }     
+    setTimeout(openBox, stepMinutes[step-1]);
+    step++;  
+  }
+  
+  init();
+};
+
+function reveal() {
+  document.querySelector('.merrywrap').style.backgroundColor = 'transparent';
+  
+  // بدء مشهد الاختراق بعد 3 ثواني
+  setTimeout(() => {
+    startHackingScene();
+  }, 3000);
+  
+  loop();
+}
+
+// بدء مشهد الاختراق
+function startHackingScene() {
+  // إظهار نافذة الاختراق فوق الشاشة الحالية
+  document.getElementById('hackOverlay').style.display = 'block';
+  
+  // بدء كتابة الكود (4 ثواني فقط)
+  typeHackingCode();
+}
+
+// كتابة كود الاختراق السريع
+function typeHackingCode() {
+  const hackingCommands = [
+    { text: "root@system:~# scan --target=BOYS_MATH_MODULE", class: "system", delay: 30 },
+    { text: "ERROR: Module not responding...", class: "error", delay: 20 },
+    { text: "CRITICAL: System failure detected", class: "error", delay: 25 },
+    { text: "Initiating GIRLS_POWER_PROTOCOL...", class: "success", delay: 30 },
+    { text: ">>> BREACH SUCCESSFUL <<<", class: "warning", delay: 40 },
+    { text: "OVERRIDE COMPLETE - GIRLS IN CONTROL", class: "success", delay: 30 }
+  ];
+  
+  const codeContainer = document.getElementById('hackingCode');
+  let commandIndex = 0;
+  
+  function typeCommand() {
+    if (commandIndex < hackingCommands.length) {
+      const command = hackingCommands[commandIndex];
+      const line = document.createElement('div');
+      line.className = `hack-line ${command.class}`;
+      codeContainer.appendChild(line);
+      
+      let charIndex = 0;
+      function typeChar() {
+        if (charIndex < command.text.length) {
+          line.textContent += command.text[charIndex];
+          charIndex++;
+          setTimeout(typeChar, command.delay);
+        } else {
+          commandIndex++;
+          setTimeout(typeCommand, 100);
+        }
+      }
+      typeChar();
+    } else {
+      setTimeout(() => {
+        document.getElementById('hackOverlay').style.display = 'none';
+        showVoiceMessage();
+      }, 500);
+    }
+  }
+  
+  typeCommand();
+}
+
+// إظهار الرسالة الصوتية
+function showVoiceMessage() {
+  document.getElementById('voiceOverlay').style.display = 'block';
+  
+  const messages = [
+    "اكتشفنا خطأ في نظام الرياضيات...",
+    "<span class='voice-highlight'>الأولاد</span> أعطونا عين وخرب النظام 😤",
+    "و<span class='voice-highlight'>البنات</span> أنقذوا النظام! 💪✨"
+  ];
+  
+  let messageIndex = 0;
+  const voiceText = document.getElementById('voiceText');
+  
+  function showNextMessage() {
+    if (messageIndex < messages.length) {
+      voiceText.innerHTML = messages[messageIndex];
+      messageIndex++;
+      
+      const delay = messageIndex === 1 ? 2000 : messageIndex === 2 ? 1500 : 1500;
+      setTimeout(showNextMessage, delay);
+    } else {
+      setTimeout(() => {
+        document.getElementById('voiceOverlay').style.display = 'none';
+        startRoyalScene();
+      }, 1000);
+    }
+  }
+  
+  showNextMessage();
+}
+
+// بدء المشهد الملكي
+function startRoyalScene() {
+  document.getElementById('scene3').style.display = 'block';
+  document.getElementById('scene3').classList.add('fade-in');
+}
+
+// Handle window resize
+window.addEventListener('resize', function() {
+  cw = window.innerWidth;
+  ch = window.innerHeight;
+  canvas.width = cw;
+  canvas.height = ch;
+});
+</script>
