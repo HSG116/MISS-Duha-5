@@ -112,6 +112,7 @@ body {
   background: #e74;
   background-image: 
     radial-gradient(circle at center bottom, #e9b64b ,#c76075 15%, #0d0d4b 75%, #190e14 90%);
+  overflow-x: hidden; /* إضافة هذا فقط */
 }
 
 /* Canvas and background elements */
@@ -342,12 +343,14 @@ canvas#canvas {
   text-align: center;
   padding: 50px 20px;
   z-index: 20;
+  overflow-y: auto; /* تغيير من hidden إلى auto */
 }
 
 .scene3 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  min-height: 100%; /* إضافة هذه السطر */
 }
 
 .crown {
