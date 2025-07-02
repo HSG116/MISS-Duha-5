@@ -1047,6 +1047,7 @@ function showVoiceMessage() {
 function startRoyalScene() {
   document.getElementById('scene3').style.display = 'block';
   document.getElementById('scene3').classList.add('fade-in');
+  document.body.style.overflowY = "auto"; // 👈 هذا هو السطر المضاف
 }
 
 // Handle window resize
